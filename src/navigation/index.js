@@ -2,12 +2,12 @@
 import {
   createAppContainer,
   createStackNavigator,
- } from 'react-navigation'
- import homeScreen from '../components/screens/homeScreen'
- import * as SCREENS from './screens'
- import Colors from '../constants/colors'
+} from 'react-navigation';
+import * as SCREENS from './screens';
+import Colors from '../constants/colors';
+import homeScreen from '../components/screens/homeScreen';
 
- const MainStack = createStackNavigator(
+const MainStack = createStackNavigator(
   {
     [SCREENS.HOME_SCREEN]: {
       screen: homeScreen,
@@ -26,8 +26,9 @@ import {
       },
     },
   },
- )
- const RootStack = createStackNavigator(
+);
+
+const RootStack = createStackNavigator(
   {
     Main: {
       screen: MainStack,
@@ -40,8 +41,8 @@ import {
     mode: 'modal',
     headerMode: 'none',
   },
- )
+);
 
- const AppContainer = createAppContainer(RootStack)
+const AppContainer = createAppContainer(RootStack);
 
- export default AppContainer
+export default AppContainer;
