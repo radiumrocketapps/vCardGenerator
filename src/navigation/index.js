@@ -15,6 +15,7 @@ const MainStack = createStackNavigator(
   },
   {
     defaultNavigationOptions: {
+      gesturesEnabled: true,
       headerStyle: {
         backgroundColor: Colors.blue,
       },
