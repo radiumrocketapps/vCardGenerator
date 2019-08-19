@@ -5,16 +5,21 @@ import {
 } from 'react-navigation';
 import * as SCREENS from './screens';
 import Colors from '../constants/colors';
-import homeScreen from '../components/screens/homeScreen';
+import HomeScreen from '../components/screens/homeScreen';
+import FormScreen from '../components/screens/formScreen';
 
 const MainStack = createStackNavigator(
   {
     [SCREENS.HOME_SCREEN]: {
-      screen: homeScreen,
+      screen: HomeScreen,
     },
+    [SCREENS.FORM_SCREEN]: {
+      screen: FormScreen,
+    }
   },
   {
     defaultNavigationOptions: {
+      gesturesEnabled: true,
       headerStyle: {
         backgroundColor: Colors.blue,
       },

@@ -1,20 +1,8 @@
-import React from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
+import { connect } from 'react-redux';
+import HomeScreen from './homeScreen';
 
-class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Home Screen',
-  };
+const mapStatetoProps = (state) => ({
+  vCards: state.vCard.list,
+});
 
-  render() {
-    return (
-      <SafeAreaView>
-        <View>
-          <Text>HomScreen</Text>
-        </View>
-      </SafeAreaView>
-    );
-  }
-}
-
-export default HomeScreen;
+export default connect(mapStatetoProps)(HomeScreen);

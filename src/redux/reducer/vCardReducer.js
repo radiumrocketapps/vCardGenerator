@@ -1,5 +1,5 @@
 const initialState = {
-  vCards: []
+  list: []
 };
 
 export default function vCardReducer(state = initialState) {
