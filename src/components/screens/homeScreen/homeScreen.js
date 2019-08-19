@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import {
   View,
@@ -5,16 +6,22 @@ import {
   TouchableOpacity,
   ScrollView,
   Dimensions,
-  Animated,
   Text,
 } from 'react-native';
+import { NavigationScreenProps, NavigationState } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../../../constants/colors';
 import Styles from './styles';
 import Card from '../shared/card';
 
+type Props = {
+  navigation: NavigationScreenProps<NavigationState>,
+  vCards: Array<*>,
+}
+
 const { width } = Dimensions.get('window');
-class HomeScreen extends React.Component {
+
+class HomeScreen extends React.Component<Props, {}> {
   static navigationOptions = {
     title: 'vCard Generator',
     headerRight: (
@@ -36,12 +43,6 @@ class HomeScreen extends React.Component {
           {vCards.length > 0
             ? (
               <ScrollView
-                onScroll={
-                  Animated.event(
-                    [{ nativeEvent: { contentOffset: { x: this.animVal } } }]
-                  )
-                }
-                ref={(scrollView) => { this.scrollView = scrollView; }}
                 horizontal
                 decelerationRate="fast"
                 scrollEventThrottle={10}

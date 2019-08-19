@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import {
   View,
@@ -9,7 +10,13 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../../../../constants/colors';
 import styles from './styles';
 
-const Card = (props) => {
+type Props = {
+  title: string,
+  image: string,
+  description: string,
+}
+
+const Card = (props: Props) => {
   const { title, image, description } = props;
   return (
     <View style={styles.CardContainer}>
