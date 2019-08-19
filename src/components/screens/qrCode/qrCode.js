@@ -1,19 +1,19 @@
 import React from "react";
 import { View, Text, SafeAreaView } from "react-native";
 
-class HomeScreen extends React.Component {
+class QrCode extends React.Component {
   static navigationOptions = {
-    title: 'Home Screen',
+    title: 'Qr code to Share',
   };
   render() {
     return (
       <SafeAreaView>
         <View>
-          <Text>HomScreen</Text>
+          <Text>QrCode</Text>
         </View>
       </SafeAreaView>
     );
   }
 }
 
-export default HomeScreen
+export default QrCode

@@ -3,15 +3,23 @@ import {
   createAppContainer,
   createStackNavigator,
  } from 'react-navigation'
- import homeScreen from '../components/screens/homeScreen'
+ import home from '../components/screens/home'
+ import form from '../components/screens/form'
+ import qrCode from '../components/screens/qrCode'
  import * as SCREENS from './screens'
  import Colors from '../constants/colors'
 
  const MainStack = createStackNavigator(
   {
-    [SCREENS.HOME_SCREEN]: {
-      screen: homeScreen,
+    [SCREENS.HOME]: {
+      screen: home,
     },
+    [SCREENS.FORM]: {
+      screen: form,
+    },
+    [SCREENS.QR_CODE]: {
+      screen: qrCode,
+    }
   },
   {
     defaultNavigationOptions: {
@@ -32,9 +40,6 @@ import {
     Main: {
       screen: MainStack,
     },
-    // MyModal: {
-    //   screen: ModalScreen,
-    // },
   },
   {
     mode: 'modal',
