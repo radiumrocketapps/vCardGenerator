@@ -15,6 +15,7 @@ type Props = {
   title: string,
   image: string,
   description: string,
+  onSearchPress: () => void,
 }
 
 const mockedObject = {
@@ -39,7 +40,12 @@ EMAIL;TYPE=internet,home:${mockedObject.email}
 END:VCARD`.toString();
 
 const Card = (props: Props) => {
-  const { title, image, description } = props;
+  const {
+    title,
+    image,
+    description,
+    onSearchPress
+  } = props;
   return (
     <View style={styles.CardContainer}>
       <Text style={styles.Title}>{title.toUpperCase()}</Text>
@@ -56,6 +62,7 @@ const Card = (props: Props) => {
           <Ionicons
             size={35}
             name="ios-search"
+            onPress={onSearchPress}
             color={Colors.blue}
           />
         </TouchableOpacity>

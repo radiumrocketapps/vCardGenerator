@@ -10,7 +10,8 @@ import {
 } from 'react-native';
 import { NavigationScreenProps, NavigationState } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { FORM } from '../../../navigation/screens';
+import qrExample from '../../../images/qrExample.png';
+import { FORM, MODAL } from '../../../navigation/screens';
 import Colors from '../../../constants/colors';
 import Styles from './styles';
 import Card from '../../shared/card';
@@ -40,8 +41,8 @@ class Home extends React.Component<Props, {}> {
     return (
       <SafeAreaView>
         <View style={Styles.MainContainer}>
-          {/* {vCards.length > 0
-            ? ( */}
+          {!(vCards.length > 0)
+            ? (
               <ScrollView
                 horizontal
                 decelerationRate="fast"
@@ -59,12 +60,14 @@ class Home extends React.Component<Props, {}> {
               >
                 <Card
                   title="test"
-                  image=""
+                  image={qrExample}
+                  onSearchPress={() => { navigation.navigate(MODAL); }}
                   description="description"
                 />
                 <Card
                   title="test"
-                  image=""
+                  image={qrExample}
+                  onSearchPress={() => { navigation.navigate(MODAL); }}
                   description="description"
                 />
               </ScrollView>
