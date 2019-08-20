@@ -3,7 +3,7 @@ import React from 'react';
 import { TextInput, View, Text } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
-import Colors from '../../../../constants/colors';
+import Colors from '../../../constants/colors';
 
 type Props = {
   input: string,

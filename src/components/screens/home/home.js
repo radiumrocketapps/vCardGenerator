@@ -10,9 +10,10 @@ import {
 } from 'react-native';
 import { NavigationScreenProps, NavigationState } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { FORM } from '../../../navigation/screens';
 import Colors from '../../../constants/colors';
 import Styles from './styles';
-import Card from '../shared/card';
+import Card from '../../shared/card';
 
 type Props = {
   navigation: NavigationScreenProps<NavigationState>,
@@ -21,7 +22,7 @@ type Props = {
 
 const { width } = Dimensions.get('window');
 
-class HomeScreen extends React.Component<Props, {}> {
+class Home extends React.Component<Props, {}> {
   static navigationOptions = {
     title: 'vCard Generator',
     headerRight: (
@@ -78,7 +79,7 @@ class HomeScreen extends React.Component<Props, {}> {
             )} */}
           <TouchableOpacity
             style={Styles.AddButton}
-            onPress={() => navigation.navigate('FORM_SCREEN')}
+            onPress={() => navigation.navigate(FORM)}
           >
             <Ionicons
               name="ios-add-circle"
@@ -92,4 +93,4 @@ class HomeScreen extends React.Component<Props, {}> {
   }
 }
 
-export default HomeScreen;
+export default Home;

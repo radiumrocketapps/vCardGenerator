@@ -47,8 +47,8 @@ const Card = (props: Props) => {
       <QRCode
         value={stringObject}
         size={200}
-        bgColor='black'
-        fgColor='white'
+        bgColor="black"
+        fgColor="white"
       />
       <Text>{description}</Text>
       <View style={styles.ButtonContainer}>
