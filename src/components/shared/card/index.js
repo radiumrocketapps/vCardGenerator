@@ -7,7 +7,7 @@ import {
   Image
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Colors from '../../../../constants/colors';
+import Colors from '../../../constants/colors';
 import styles from './styles';
 
 type Props = {
