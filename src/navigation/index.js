@@ -7,6 +7,7 @@ import * as SCREENS from './screens';
 import Colors from '../constants/colors';
 import Home from '../components/screens/home';
 import Form from '../components/screens/form';
+import Modal from '../components/screens/modal';
 
 const MainStack = createStackNavigator(
   {
@@ -38,9 +39,9 @@ const RootStack = createStackNavigator(
     Main: {
       screen: MainStack,
     },
-    // MyModal: {
-    //   screen: ModalScreen,
-    // },
+    [SCREENS.MODAL]: {
+      screen: Modal,
+    },
   },
   {
     mode: 'modal',

@@ -14,20 +14,29 @@ type Props = {
   title: string,
   image: string,
   description: string,
+  onSearchPress: () => void,
 }
 
 const Card = (props: Props) => {
-  const { title, image, description } = props;
+  const {
+    title,
+    image,
+    description,
+    onSearchPress
+  } = props;
   return (
     <View style={styles.CardContainer}>
       <Text style={styles.Title}>{title.toUpperCase()}</Text>
-      <Image style={styles.Image} source={image} />
+      <View style={styles.ImageContainer}>
+        <Image style={styles.Image} source={image} />
+      </View>
       <Text>{description}</Text>
       <View style={styles.ButtonContainer}>
         <TouchableOpacity>
           <Ionicons
             size={35}
             name="ios-search"
+            onPress={onSearchPress}
             color={Colors.blue}
           />
         </TouchableOpacity>
