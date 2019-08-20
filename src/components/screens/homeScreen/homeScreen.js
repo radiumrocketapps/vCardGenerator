@@ -36,7 +36,6 @@ class HomeScreen extends React.Component<Props, {}> {
 
   render() {
     const { navigation, vCards } = this.props;
-
     return (
       <SafeAreaView>
         <View style={Styles.MainContainer}>
