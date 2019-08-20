@@ -74,7 +74,7 @@ class InputField extends React.Component<Props, StateProps> {
           onChangeText={onChange}
           onSubmitEditing={onEnter}
           blurOnSubmit={false}
-          returnKeyType="next"
+          returnKeyType={refField === 'country' ? 'done' : 'next'}
           onBlur={this.handleBlur}
           onFocus={this.handleFocus}
           style={[
