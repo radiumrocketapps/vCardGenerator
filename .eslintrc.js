@@ -6,6 +6,7 @@ module.exports = {
   },
   'rules': {
     'no-use-before-define': 'off',
+    'plugin': 'flowtype/recommended',
     'react/jsx-filename-extension': 'off',
     'react/prop-types': 'off',
     'comma-dangle': 'off'

@@ -15,6 +15,7 @@ type Props = {
   image: string,
   description: string,
   onSearchPress: () => void,
+  onDeletePress: () => void,
 }
 
 const Card = (props: Props) => {
@@ -22,7 +23,8 @@ const Card = (props: Props) => {
     title,
     image,
     description,
-    onSearchPress
+    onSearchPress,
+    onDeletePress
   } = props;
   return (
     <View style={styles.CardContainer}>
@@ -44,6 +46,7 @@ const Card = (props: Props) => {
           <Ionicons
             size={35}
             name="ios-trash"
+            onPress={onDeletePress}
             color={Colors.blue}
           />
         </TouchableOpacity>

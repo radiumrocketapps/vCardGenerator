@@ -11,6 +11,7 @@
     "flow": "flow"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.6.1",
     "acorn": "^7.0.0",
     "react": "16.8.3",
     "react-native": "0.59.10",
@@ -24,8 +25,10 @@
     "redux": "^4.0.4",
     "redux-devtools": "^3.5.0",
     "redux-devtools-extension": "^2.13.8",
+    "redux-persist": "^5.10.0",
     "redux-form": "^8.2.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
