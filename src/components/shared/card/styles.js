@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import Colors from '../../../../constants/colors';
+import Colors from '../../../constants/colors';
 
 const { width, height } = Dimensions.get('window');
 
@@ -24,10 +24,14 @@ const styles = StyleSheet.create({
     width: '100%',
     textAlign: 'center',
   },
+  ImageContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   Image: {
-    width: 30,
-    height: 30,
-    flexGrow: 1,
+    width: 200,
+    height: 200,
   },
   ButtonContainer: {
     display: 'flex',

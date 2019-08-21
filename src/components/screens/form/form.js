@@ -7,10 +7,10 @@ import {
 } from 'react-native';
 import { Field } from 'redux-form';
 import type { FormProps } from 'redux-form';
-import InputField from '../shared/field';
+import InputField from '../../shared/field';
 import styles from './styles';
 
-class FormScreen extends React.Component<FormProps> {
+class Form extends React.Component<FormProps> {
   render() {
     const { handleSubmit } = this.props;
     return (
@@ -132,4 +132,4 @@ class FormScreen extends React.Component<FormProps> {
   }
 }
 
-export default FormScreen;
+export default Form;

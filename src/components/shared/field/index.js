@@ -3,7 +3,7 @@ import React from 'react';
 import { TextInput, View, Text } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
-import Colors from '../../../../constants/colors';
+import Colors from '../../../constants/colors';
 
 type Props = {
   input: string,
@@ -19,7 +19,8 @@ type Props = {
     warning: string,
   },
   input: {
-    onChange: () => void
+    onChange: () => void,
+    value: string | number,
   }
 }
 
@@ -45,7 +46,6 @@ class InputField extends React.Component<Props, StateProps> {
 
   render() {
     const {
-      input,
       label,
       type,
       keyboardType,
@@ -57,7 +57,10 @@ class InputField extends React.Component<Props, StateProps> {
         error,
         warning
       },
-      input: { onChange }
+      input: {
+        onChange,
+        value,
+      }
     } = this.props;
     const { isFocused } = this.state;
     return (
@@ -82,7 +85,7 @@ class InputField extends React.Component<Props, StateProps> {
             { borderBottomColor: isFocused ? Colors.blue : Colors.grey }
           ]}
           type={type}
-          value={input}
+          value={value}
           keyboardType={keyboardType}
         />
         <Ionicons
