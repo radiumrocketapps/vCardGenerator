@@ -39,8 +39,8 @@ class HomeScreen extends React.Component<Props, {}> {
     return (
       <SafeAreaView>
         <View style={Styles.MainContainer}>
-          {vCards.length > 0
-            ? (
+          {/* {vCards.length > 0
+            ? ( */}
               <ScrollView
                 horizontal
                 decelerationRate="fast"
@@ -67,7 +67,7 @@ class HomeScreen extends React.Component<Props, {}> {
                   description="description"
                 />
               </ScrollView>
-            ) : (
+            {/* ) : (
               <View>
                 <Text style={Styles.AddTextInfo}>
                   Click on the
@@ -75,7 +75,7 @@ class HomeScreen extends React.Component<Props, {}> {
                   icon for add a vCard
                 </Text>
               </View>
-            )}
+            )} */}
           <TouchableOpacity
             style={Styles.AddButton}
             onPress={() => navigation.navigate('FORM_SCREEN')}
