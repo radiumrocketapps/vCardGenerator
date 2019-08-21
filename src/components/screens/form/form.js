@@ -1,3 +1,4 @@
+/* eslint-disable lines-between-class-members */
 // @flow
 import React from 'react';
 import {
@@ -11,6 +12,13 @@ import InputField from '../../shared/field';
 import styles from './styles';
 
 class Form extends React.Component<FormProps> {
+  name: string;
+  email: string;
+  company: string;
+  tittle: string;
+  address: string;
+  country: string;
+
   render() {
     const { handleSubmit } = this.props;
     return (
@@ -22,7 +30,6 @@ class Form extends React.Component<FormProps> {
           type="text"
           focus
           forwardRef
-          validate={this.required}
           iconName="ios-information-circle"
           onEnter={() => {
             this.name.getRenderedComponent().refs.name.focus();
