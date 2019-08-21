@@ -8,6 +8,7 @@ import {
   Dimensions,
   Text,
 } from 'react-native';
+import type { ReduxProps } from '.';
 import { NavigationScreenProps, NavigationState } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import qrExample from '../../../images/qrExample.png';
@@ -16,9 +17,8 @@ import Colors from '../../../constants/colors';
 import Styles from './styles';
 import Card from '../../shared/card';
 
-type Props = {
+type Props = ReduxProps & {
   navigation: NavigationScreenProps<NavigationState>,
-  vCards: Array<*>,
 }
 
 const { width } = Dimensions.get('window');
@@ -37,11 +37,12 @@ class Home extends React.Component<Props, {}> {
   }
 
   render() {
-    const { navigation, vCards } = this.props;
+    const { navigation, vCardList, deleteQrCode } = this.props;
+    console.log('props', this.props);
     return (
       <SafeAreaView>
         <View style={Styles.MainContainer}>
-          {!(vCards.length > 0)
+          {vCardList.length > 0
             ? (
               <ScrollView
                 horizontal
@@ -57,19 +58,21 @@ class Home extends React.Component<Props, {}> {
                   right: 30,
                 }}
                 pagingEnabled
-              >
-                <Card
-                  title="test"
-                  image={qrExample}
-                  onSearchPress={() => { navigation.navigate(MODAL); }}
-                  description="description"
-                />
-                <Card
-                  title="test"
-                  image={qrExample}
-                  onSearchPress={() => { navigation.navigate(MODAL); }}
-                  description="description"
-                />
+              > 
+                {
+                  vCardList.map(item => {
+                    return(
+                      <Card
+                        key={item.id}
+                        title={item.name}
+                        image={qrExample}
+                        onSearchPress={() => { navigation.navigate(MODAL); }}
+                        onDeletePress={() => deleteQrCode(item.id)}
+                        description={item.description}
+                      />
+                    )
+                  })
+                }
               </ScrollView>
             {/* ) : (
               <View>

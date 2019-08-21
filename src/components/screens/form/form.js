@@ -6,13 +6,16 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
+import type { ReduxProps } from '.'
 import { Field } from 'redux-form';
 import type { FormProps } from 'redux-form';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import InputField from '../../shared/field';
 import styles from './styles';
 
-class Form extends React.Component<FormProps> {
+type Props = ReduxProps & FormProps & {}
+
+class Form extends React.Component<Props> {
   name: string;
   email: string;
   company: string;
