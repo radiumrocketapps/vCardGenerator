@@ -34,10 +34,10 @@ const onSubmit = (formValues, dispatch, props) => {
     name: Name,
     emailAddress: Email,
     phoneNumber: Phone,
-    Company: Company,
-    Title: Title,
-    Address: Address,
-    Country: Country,
+    company: Company,
+    title: Title,
+    address: Address,
+    country: Country,
   }))
   props.navigation.navigate(HOME);
 }

@@ -4,6 +4,7 @@ import Colors from '../../../constants/colors';
 const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
+
   CardContainer: {
     display: 'flex',
     height: height - 300,
@@ -18,21 +19,20 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.8,
     elevation: 1,
   },
+
   Title: {
     fontSize: 15,
     fontWeight: 'bold',
     width: '100%',
     textAlign: 'center',
   },
-  ImageContainer: {
+
+  QrCodeContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  Image: {
-    width: 200,
-    height: 200,
-  },
+
   ButtonContainer: {
     display: 'flex',
     paddingLeft: 10,
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   }
+
 });
 
 export default styles;

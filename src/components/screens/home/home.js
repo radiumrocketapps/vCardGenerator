@@ -11,7 +11,6 @@ import {
 import type { ReduxProps } from '.';
 import { NavigationScreenProps, NavigationState } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import qrExample from '../../../images/qrExample.png';
 import { FORM, MODAL } from '../../../navigation/screens';
 import Colors from '../../../constants/colors';
 import Styles from './styles';
@@ -65,7 +64,7 @@ class Home extends React.Component<Props, {}> {
                       <Card
                         key={item.id}
                         title={item.name}
-                        image={qrExample}
+                        values={item}
                         onSearchPress={() => { navigation.navigate(MODAL); }}
                         onDeletePress={() => deleteQrCode(item.id)}
                         description={item.description}
@@ -74,7 +73,8 @@ class Home extends React.Component<Props, {}> {
                   })
                 }
               </ScrollView>
-            {/* ) : (
+            )
+            : (
               <View>
                 <Text style={Styles.AddTextInfo}>
                   Click on the
@@ -82,7 +82,7 @@ class Home extends React.Component<Props, {}> {
                   icon for add a vCard
                 </Text>
               </View>
-            )} */}
+            )}
           <TouchableOpacity
             style={Styles.AddButton}
             onPress={() => navigation.navigate(FORM)}

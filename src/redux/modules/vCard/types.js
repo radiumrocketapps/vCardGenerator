@@ -12,10 +12,10 @@ export type QrData = {
   name: string;
   emailAddress: string;
   phoneNumber: number;
-  Company: string;
-  Title: string;
-  Address: string;
-  Country: string;
+  company: string;
+  title: string;
+  address: string;
+  country: string;
 };
 
 export type CreateQrCode = {|

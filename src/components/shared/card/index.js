@@ -8,15 +8,16 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import QRCode from 'react-native-qrcode';
-import Colors from '../../../../constants/colors';
+import Colors from '../../../constants/colors';
+import type { QrData } from '../../../redux/modules/vCard/types';
 import styles from './styles';
 
 type Props = {
   title: string,
-  image: string,
   description: string,
   onSearchPress: () => void,
   onDeletePress: () => void,
+  values: QrData,
 }
 
 const mockedObject = {
@@ -28,36 +29,39 @@ const mockedObject = {
   email: 'damian.lingua@radiumrocket.com'
 };
 
-// structure for generate a vCard in ANDROID, NOT WORKING ON IOS... sad :(
+const Card = (props: Props) => {
+  const {
+    title,
+    description,
+    onSearchPress,
+    onDeletePress,
+    values,
+  } = props;
 
 // IMPORTANT: the string can not have empty spaces between the variables, otherwise, android wont recongnize the VCARD
 const stringObject = `BEGIN:VCARD
 VERSION:3.0
-N:${mockedObject.name};${mockedObject.name}
-FN:${mockedObject.name}
-ADR;TYPE=home:;;;;;;${mockedObject.country}
-TEL;TYPE=home:${mockedObject.phone.toString()}
-EMAIL;TYPE=internet,home:${mockedObject.email}
+N:${values.name};${values.name}
+FN:${values.name}
+ORG:${values.company}
+EMAIL:${values.emailAddress}
+ROLE:${values.title}
+TEL;TYPE=home:${values.phoneNumber.toString()}
+ADR;TYPE=intl,work,postal,parcel:;;${values.country}
+ADR;TYPE=home:;;;;;;${values.address}
 END:VCARD`.toString();
 
-const Card = (props: Props) => {
-  const {
-    title,
-    image,
-    description,
-    onSearchPress,
-    onDeletePress
-  } = props;
   return (
     <View style={styles.CardContainer}>
       <Text style={styles.Title}>{title.toUpperCase()}</Text>
-      {/* <Image style={styles.Image} source={image} /> */}
-      <QRCode
-        value={stringObject}
-        size={200}
-        bgColor="black"
-        fgColor="white"
-      />
+      <View style={styles.QrCodeContainer}>
+        <QRCode
+          value={stringObject}
+          size={200}
+          bgColor="black"
+          fgColor="white"
+        />
+      </View>
       <Text>{description}</Text>
       <View style={styles.ButtonContainer}>
         <TouchableOpacity>
