@@ -57,7 +57,7 @@ class Home extends React.Component<Props, {}> {
                   right: 30,
                 }}
                 pagingEnabled
-              > 
+              >
                 {
                   vCardList.map(item => {
                     return(
@@ -67,7 +67,6 @@ class Home extends React.Component<Props, {}> {
                         values={item}
                         onSearchPress={() => { navigation.navigate(MODAL); }}
                         onDeletePress={() => deleteQrCode(item.id)}
-                        description={item.description}
                       />
                     )
                   })

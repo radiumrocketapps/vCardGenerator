@@ -14,7 +14,6 @@ import styles from './styles';
 
 type Props = {
   title: string,
-  description: string,
   onSearchPress: () => void,
   onDeletePress: () => void,
   values: QrData,
@@ -24,7 +23,7 @@ const mockedObject = {
   description: 'Damian',
   name: 'damian',
   phone: 155434553,
-  address: 'ameghino',
+  address: 'testAdress',
   country: 'usa',
   email: 'damian.lingua@radiumrocket.com'
 };
@@ -32,7 +31,6 @@ const mockedObject = {
 const Card = (props: Props) => {
   const {
     title,
-    description,
     onSearchPress,
     onDeletePress,
     values,
@@ -62,7 +60,16 @@ END:VCARD`.toString();
           fgColor="white"
         />
       </View>
-      <Text>{description}</Text>
+      <View style={styles.Description}>
+        <Text 
+          style={[styles.TextDescription, {color: Colors.blue, fontWeight: 'bold'}]}
+        >
+          {values.description}
+        </Text>
+        <Text style={styles.TextDescription}>{values.name}</Text>
+        <Text style={styles.TextDescription}>{values.phoneNumber}</Text>
+        <Text style={styles.TextDescription}>{values.emailAddress && values.emailAddress}</Text>
+      </View>
       <View style={styles.ButtonContainer}>
         <TouchableOpacity>
           <Ionicons

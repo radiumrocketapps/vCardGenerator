@@ -27,6 +27,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 
+  Description: {
+    justifyContent: 'center',
+    marginBottom: 50,
+  },
+
+  TextDescription: {
+    textAlign: 'center',
+  },
+
   QrCodeContainer: {
     flex: 1,
     justifyContent: 'center',
