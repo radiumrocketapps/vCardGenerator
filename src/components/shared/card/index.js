@@ -11,6 +11,7 @@ import QRCode from 'react-native-qrcode';
 import Colors from '../../../constants/colors';
 import type { QrData } from '../../../redux/modules/vCard/types';
 import styles from './styles';
+import { MODAL } from '../../../navigation/screens';
 
 type Props = {
   title: string,
@@ -34,6 +35,7 @@ const Card = (props: Props) => {
     onSearchPress,
     onDeletePress,
     values,
+    navigation
   } = props;
 
 // IMPORTANT: the string can not have empty spaces between the variables, otherwise, android wont recongnize the VCARD
@@ -61,7 +63,7 @@ END:VCARD`.toString();
         />
       </View>
       <View style={styles.Description}>
-        <Text 
+        <Text
           style={[styles.TextDescription, {color: Colors.blue, fontWeight: 'bold'}]}
         >
           {values.description}
@@ -75,7 +77,7 @@ END:VCARD`.toString();
           <Ionicons
             size={35}
             name="ios-search"
-            onPress={onSearchPress}
+            onPress={() => navigation.navigate(MODAL, {stringObject, values})}
             color={Colors.blue}
           />
         </TouchableOpacity>

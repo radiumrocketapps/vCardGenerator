@@ -4,20 +4,47 @@ import {
   View,
   Text,
   SafeAreaView,
+  NativeModules
 } from 'react-native';
-import Styles from './styles';
+import QRCode from 'react-native-qrcode';
+import styles from './styles';
 
 type Props = {
+  stringObject: string,
+  values: QrData,
 }
+class Modal extends React.Component {
+  constructor() {
+    super();
+    this.state={
+      actualBrightness: null
+    }
+  }
 
-const Modal = (props: Props) => (
-  <SafeAreaView>
-    <View style={Styles.MainContainer}>
-      <Text>
-        Here will be the Modal content
-      </Text>
-    </View>
-  </SafeAreaView>
-);
+  render() {
+    const { navigation } = this.props
+    const stringObject = navigation.getParam('stringObject', '')
+    const values = navigation.getParam('values', '')
+    return (
+      <SafeAreaView>
+        <View style={styles.MainContainer}>
+          <View>
+            <Text style={styles.Description}>
+              {values.name}
+            </Text>
+          </View>
+          <View style={styles.QrCodeContainer}>
+            <QRCode
+              value={stringObject}
+              size={220}
+              bgColor="black"
+              fgColor="white"
+            />
+          </View>
+        </View>
+      </SafeAreaView>
+    )
+  }
+};
 
 export default Modal;

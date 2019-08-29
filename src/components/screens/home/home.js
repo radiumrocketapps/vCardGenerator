@@ -62,7 +62,7 @@ class Home extends React.Component<Props, {}> {
                         key={item.id}
                         title={item.name}
                         values={item}
-                        onSearchPress={() => { navigation.navigate(MODAL); }}
+                        navigation={navigation}
                         onDeletePress={() => deleteQrCode(item.id)}
                       />
                     )
