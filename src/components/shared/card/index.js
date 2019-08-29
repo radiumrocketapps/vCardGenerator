@@ -43,12 +43,12 @@ const stringObject = `BEGIN:VCARD
 VERSION:3.0
 N:${values.name};${values.name}
 FN:${values.name}
-ORG:${values.company}
-EMAIL:${values.emailAddress}
-ROLE:${values.title}
+ORG:${values.company ? values.company : ''}
+EMAIL:${values.emailAddress ? values.emailAddress.toLowerCase() : ''}
+ROLE:${values.title ? values.title : ''}
 TEL;TYPE=home:${values.phoneNumber.toString()}
-ADR;TYPE=intl,work,postal,parcel:;;${values.country}
-ADR;TYPE=home:;;;;;;${values.address}
+ADR;TYPE=intl,work,postal,parcel:;;${values.country ? values.country : ''}
+ADR;TYPE=home:;;;;;;${values.address ? values.address : ''}
 END:VCARD`.toString();
 
   return (

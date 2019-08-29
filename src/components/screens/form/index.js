@@ -55,6 +55,12 @@ const validate = (values) => {
     }
   })
 
+  values.Email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.Email) ?
+    errors.Email = 'Invalid mail address' : undefined
+
+  values.Phone && !/^[0-9]+$/.test(values.Phone) ?
+    errors.Phone = 'Please enter a number' : undefined
+
   return errors;
 };
 

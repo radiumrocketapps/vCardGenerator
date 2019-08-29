@@ -34,7 +34,7 @@ class Form extends React.Component<Props> {
       >
         <View>
           <Field
-            label="Description"
+            label="Description*"
             name="Description"
             component={InputField}
             type="text"
@@ -48,7 +48,7 @@ class Form extends React.Component<Props> {
             refField="Description"
           />
           <Field
-            label="Name"
+            label="Name*"
             name="Name"
             component={InputField}
             type="text"
@@ -75,7 +75,7 @@ class Form extends React.Component<Props> {
             keyboardType="email-address"
           />
           <Field
-            label="Phone number"
+            label="Phone number*"
             name="Phone"
             component={InputField}
             type="number"
