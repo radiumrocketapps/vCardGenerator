@@ -24,7 +24,9 @@ class Form extends React.Component<Props> {
   title: Object
   address: Object
   country: Object
-  
+  workPhone: Object
+  companyEmail: Object
+
   render() {
     const { handleSubmit } = this.props;
     return (
@@ -34,7 +36,7 @@ class Form extends React.Component<Props> {
       >
         <View>
           <Field
-            label="Description"
+            label="Description*"
             name="Description"
             component={InputField}
             type="text"
@@ -48,7 +50,7 @@ class Form extends React.Component<Props> {
             refField="Description"
           />
           <Field
-            label="Name"
+            label="Name*"
             name="Name"
             component={InputField}
             type="text"
@@ -75,8 +77,22 @@ class Form extends React.Component<Props> {
             keyboardType="email-address"
           />
           <Field
-            label="Phone number"
+            label="Phone number*"
             name="Phone"
+            component={InputField}
+            type="number"
+            iconName="md-phone-portrait"
+            forwardRef
+            onEnter={() => {
+              this.workPhone.getRenderedComponent().refs.workPhone.focus();
+            }}
+            ref={(ref) => { this.phone = ref; }}
+            refField="phone"
+            keyboardType="numeric"
+          />
+          <Field
+            label="Work Phone"
+            name="WorkPhone"
             component={InputField}
             type="number"
             iconName="md-phone-portrait"
@@ -84,8 +100,8 @@ class Form extends React.Component<Props> {
             onEnter={() => {
               this.company.getRenderedComponent().refs.company.focus();
             }}
-            ref={(ref) => { this.phone = ref; }}
-            refField="phone"
+            ref={(ref) => { this.workPhone = ref; }}
+            refField="workPhone"
             keyboardType="numeric"
           />
           <Field
@@ -96,13 +112,27 @@ class Form extends React.Component<Props> {
             iconName="ios-globe"
             forwardRef
             onEnter={() => {
-              this.title.getRenderedComponent().refs.title.focus();
+              this.companyEmail.getRenderedComponent().refs.companyEmail.focus();
             }}
             ref={(ref) => { this.company = ref; }}
             refField="company"
           />
           <Field
-            label="Title"
+            label="Company Email"
+            name="CompanyEmail"
+            component={InputField}
+            type="mail"
+            iconName="ios-mail"
+            forwardRef
+            onEnter={() => {
+              this.title.getRenderedComponent().refs.title.focus();
+            }}
+            ref={(ref) => { this.companyEmail = ref; }}
+            refField="companyEmail"
+            keyboardType="email-address"
+          />
+          <Field
+            label="Title / Rol"
             name="Title"
             component={InputField}
             type="text"
