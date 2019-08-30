@@ -44,13 +44,14 @@ VERSION:3.0
 N:${values.name};${values.name}
 FN:${values.name}
 ORG:${values.company ? values.company : ''}
-EMAIL:${values.emailAddress ? values.emailAddress.toLowerCase() : ''}
+EMAIL;TYPE=PREF:${values.emailAddress ? values.emailAddress.toLowerCase() : ''}
+EMAIL;TYPE=WORK:${values.companyEmail ? values.companyEmail.toLowerCase() : ''}
 ROLE:${values.title ? values.title : ''}
-TEL;TYPE=home:${values.phoneNumber.toString()}
-ADR;TYPE=intl,work,postal,parcel:;;${values.country ? values.country : ''}
-ADR;TYPE=home:;;;;;;${values.address ? values.address : ''}
+TITLE:${values.title ? values.title : ''}
+TEL;TYPE=CELL:${values.phoneNumber.toString()}
+TEL;TYPE=WORK:${values.workPhone ? values.workPhone.toString() : ''}
+ADR;TYPE=HOME:;;${values.address ? values.address : ''};;;;${values.country ? values.country : ''}
 END:VCARD`.toString();
-
   return (
     <View style={styles.CardContainer}>
       <Text style={styles.Title}>{title.toUpperCase()}</Text>
@@ -64,7 +65,7 @@ END:VCARD`.toString();
       </View>
       <View style={styles.Description}>
         <Text
-          style={[styles.TextDescription, {color: Colors.blue, fontWeight: 'bold'}]}
+          style={[styles.TextDescription, {color: Colors.darkBlue, fontWeight: 'bold'}]}
         >
           {values.description}
         </Text>
@@ -78,7 +79,7 @@ END:VCARD`.toString();
             size={35}
             name="ios-search"
             onPress={() => navigation.navigate(MODAL, {stringObject, values})}
-            color={Colors.blue}
+            color={Colors.darkBlue}
           />
         </TouchableOpacity>
         <TouchableOpacity>
@@ -86,7 +87,7 @@ END:VCARD`.toString();
             size={35}
             name="ios-trash"
             onPress={onDeletePress}
-            color={Colors.blue}
+            color={Colors.darkBlue}
           />
         </TouchableOpacity>
       </View>

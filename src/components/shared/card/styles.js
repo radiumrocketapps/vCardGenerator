@@ -13,10 +13,12 @@ const styles = StyleSheet.create({
     margin: 30,
     borderRadius: 45,
     backgroundColor: Colors.shadow,
-    elevation: 1,
+    overflow: 'hidden',
+    elevation: 5,
   },
 
   Title: {
+    marginTop: 20,
     fontSize: 15,
     fontWeight: 'bold',
     width: '100%',

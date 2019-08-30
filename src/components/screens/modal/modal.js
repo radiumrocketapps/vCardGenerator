@@ -36,7 +36,7 @@ class Modal extends React.Component {
           <View style={styles.QrCodeContainer}>
             <QRCode
               value={stringObject}
-              size={220}
+              size={250}
               bgColor="black"
               fgColor="white"
             />

@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     marginTop: 20,
+    marginBottom: 50,
     width: 80,
     height: 40,
     padding: 10,

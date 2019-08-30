@@ -24,7 +24,9 @@ class Form extends React.Component<Props> {
   title: Object
   address: Object
   country: Object
-  
+  workPhone: Object
+  companyEmail: Object
+
   render() {
     const { handleSubmit } = this.props;
     return (
@@ -82,10 +84,24 @@ class Form extends React.Component<Props> {
             iconName="md-phone-portrait"
             forwardRef
             onEnter={() => {
-              this.company.getRenderedComponent().refs.company.focus();
+              this.workPhone.getRenderedComponent().refs.workPhone.focus();
             }}
             ref={(ref) => { this.phone = ref; }}
             refField="phone"
+            keyboardType="numeric"
+          />
+          <Field
+            label="Work Phone"
+            name="WorkPhone"
+            component={InputField}
+            type="number"
+            iconName="md-phone-portrait"
+            forwardRef
+            onEnter={() => {
+              this.company.getRenderedComponent().refs.company.focus();
+            }}
+            ref={(ref) => { this.workPhone = ref; }}
+            refField="workPhone"
             keyboardType="numeric"
           />
           <Field
@@ -96,13 +112,27 @@ class Form extends React.Component<Props> {
             iconName="ios-globe"
             forwardRef
             onEnter={() => {
-              this.title.getRenderedComponent().refs.title.focus();
+              this.companyEmail.getRenderedComponent().refs.companyEmail.focus();
             }}
             ref={(ref) => { this.company = ref; }}
             refField="company"
           />
           <Field
-            label="Title"
+            label="Company Email"
+            name="CompanyEmail"
+            component={InputField}
+            type="mail"
+            iconName="ios-mail"
+            forwardRef
+            onEnter={() => {
+              this.title.getRenderedComponent().refs.title.focus();
+            }}
+            ref={(ref) => { this.companyEmail = ref; }}
+            refField="companyEmail"
+            keyboardType="email-address"
+          />
+          <Field
+            label="Title / Rol"
             name="Title"
             component={InputField}
             type="text"

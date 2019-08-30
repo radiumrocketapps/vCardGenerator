@@ -1,5 +1,5 @@
 // @flow
-import type { 
+import type {
   State,
   CreateQrCode,
   DeleteQrCode,
