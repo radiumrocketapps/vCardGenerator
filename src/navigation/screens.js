@@ -1,4 +1,9 @@
-export const HOME_SCREEN = 'HOME_SCREEN'
+export const HOME = 'HOME';
+export const FORM = 'FORM';
+export const MODAL = 'MODAL';
+
 export default {
-  HOME_SCREEN,
-}
+  HOME,
+  FORM,
+  MODAL
+};

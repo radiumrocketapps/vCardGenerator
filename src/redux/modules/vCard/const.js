@@ -1,0 +1,3 @@
+// @flow
+export const CREATE_QR_CODE: 'CREATE_QR_CODE' = 'CREATE_QR_CODE';
+export const DELETE_QR_CODE: 'DELETE_QR_CODE' = 'DELETE_QR_CODE';
