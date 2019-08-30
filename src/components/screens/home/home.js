@@ -16,9 +16,7 @@ import Colors from '../../../constants/colors';
 import Styles from './styles';
 import Card from '../../shared/card';
 
-type Props = ReduxProps & {
-  navigation: NavigationScreenProps<NavigationState>,
-}
+type Props = NavigationScreenProps & ReduxProps
 
 const { width } = Dimensions.get('window');
 
@@ -37,7 +35,6 @@ class Home extends React.Component<Props, {}> {
 
   render() {
     const { navigation, vCardList, deleteQrCode } = this.props;
-    console.log('props', this.props);
     return (
       <SafeAreaView>
         <View style={Styles.MainContainer}>

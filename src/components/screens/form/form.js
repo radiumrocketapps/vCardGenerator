@@ -16,13 +16,15 @@ import styles from './styles';
 type Props = ReduxProps & FormProps & {}
 
 class Form extends React.Component<Props> {
-  name: string;
-  email: string;
-  company: string;
-  tittle: string;
-  address: string;
-  country: string;
-
+  required: () => void
+  name: Object
+  email: Object
+  phone: Object
+  company: Object
+  title: Object
+  address: Object
+  country: Object
+  
   render() {
     const { handleSubmit } = this.props;
     return (
