@@ -5,6 +5,7 @@ import {
   View,
   TouchableOpacity,
   Text,
+  StatusBar,
 } from 'react-native';
 import type { ReduxProps } from '.'
 import { Field } from 'redux-form';
@@ -12,6 +13,7 @@ import type { FormProps } from 'redux-form';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import InputField from '../../shared/field';
 import styles from './styles';
+import Colors from '../../../constants/colors';
 
 type Props = ReduxProps & FormProps & {}
 
@@ -30,6 +32,8 @@ class Form extends React.Component<Props> {
   render() {
     const { handleSubmit } = this.props;
     return (
+      <>
+      <StatusBar backgroundColor={Colors.blue} barStyle="light-content" />
       <KeyboardAwareScrollView
         enableOnAndroid
         extraScrollHeight={10}
@@ -178,6 +182,7 @@ class Form extends React.Component<Props> {
           </TouchableOpacity>
         </View>
       </KeyboardAwareScrollView>
+      </>
     );
   }
 }
