@@ -7,6 +7,7 @@ import {
   ScrollView,
   Dimensions,
   Text,
+  StatusBar,
 } from 'react-native';
 import type { ReduxProps } from '.';
 import { NavigationScreenProps, NavigationState } from 'react-navigation';
@@ -23,20 +24,13 @@ const { width } = Dimensions.get('window');
 class Home extends React.Component<Props, {}> {
   static navigationOptions = {
     title: 'vCard Generator',
-    headerRight: (
-      <Ionicons
-        name="ios-settings"
-        size={30}
-        color={Colors.white}
-        style={Styles.ConfigButton}
-      />
-    )
   }
 
   render() {
     const { navigation, vCardList, deleteQrCode } = this.props;
     return (
       <SafeAreaView>
+        <StatusBar backgroundColor={Colors.blue} barStyle="light-content" />
         <View style={Styles.MainContainer}>
           {vCardList.length > 0
             ? (
