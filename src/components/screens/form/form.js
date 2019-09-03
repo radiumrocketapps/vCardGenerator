@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
-import type { ReduxProps } from '.'
+import type { ReduxProps } from '.';
 import { Field } from 'redux-form';
 import type { FormProps } from 'redux-form';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
@@ -36,7 +36,7 @@ class Form extends React.Component<Props> {
       >
         <View>
           <Field
-            label="Description*"
+            label="Description *"
             name="Description"
             component={InputField}
             type="text"
@@ -50,7 +50,7 @@ class Form extends React.Component<Props> {
             refField="Description"
           />
           <Field
-            label="Name*"
+            label="Name *"
             name="Name"
             component={InputField}
             type="text"
@@ -77,7 +77,7 @@ class Form extends React.Component<Props> {
             keyboardType="email-address"
           />
           <Field
-            label="Phone number*"
+            label="Phone number *"
             name="Phone"
             component={InputField}
             type="number"
@@ -163,7 +163,6 @@ class Form extends React.Component<Props> {
             component={InputField}
             type="text"
             iconName="md-locate"
-            onEnter={handleSubmit}
             forwardRef
             ref={(ref) => { this.country = ref; }}
             refField="country"
