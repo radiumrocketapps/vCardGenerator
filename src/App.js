@@ -1,10 +1,7 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
  * @format
  * @flow
- */
+*/
 
 import React from 'react';
 import { Provider } from 'react-redux';
@@ -14,13 +11,21 @@ import {
   store as configureStore,
   persistor,
 } from './helpers/store';
+import SplashScreen from 'react-native-splash-screen';
 
-const App = () => (
-  <Provider store={configureStore}>
-    <PersistGate persistor={persistor}>
-      <Navigation />
-    </PersistGate>
-  </Provider>
-);
+class App extends React.Component<{}> {
+  componentDidMount() {
+    SplashScreen.hide()
+  }
+  render() {
+    return (
+      <Provider store={configureStore}>
+        <PersistGate persistor={persistor}>
+          <Navigation />
+        </PersistGate>
+      </Provider>
+    )
+  }
+};
 
 export default App;

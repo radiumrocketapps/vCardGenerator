@@ -5,16 +5,25 @@ const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
 
-  CardContainer: {
-    display: 'flex',
-    height: height - 300,
+  Container: {
+    height: height * 0.68,
     width: width - 60,
-    padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
     margin: 30,
-    borderRadius: 45,
+    borderRadius: 10,
     backgroundColor: Colors.shadow,
     overflow: 'hidden',
     elevation: 5,
+  },
+
+  CardContainer: {
+    height: '100%',
+    width: '90%',
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
 
   Title: {
@@ -27,7 +36,6 @@ const styles = StyleSheet.create({
 
   Description: {
     justifyContent: 'center',
-    marginBottom: 50,
   },
 
   TextDescription: {
@@ -35,13 +43,13 @@ const styles = StyleSheet.create({
   },
 
   QrCodeContainer: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 20,
   },
 
   ButtonContainer: {
-    display: 'flex',
+    width: '100%',
     marginBottom: 15,
     paddingLeft: 20,
     paddingRight: 20,

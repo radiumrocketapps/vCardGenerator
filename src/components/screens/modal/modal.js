@@ -6,17 +6,23 @@ import {
   SafeAreaView,
   NativeModules
 } from 'react-native';
+import { NavigationScreenProps } from 'react-navigation';
+import type { ReduxProps } from './';
 import QRCode from 'react-native-qrcode';
 import styles from './styles';
 
-type Props = {
+type Props = NavigationScreenProps & ReduxProps & {
   stringObject: string,
-  values: QrData,
 }
-class Modal extends React.Component {
+
+type State = {
+  actualBrightness: number | null;
+}
+
+class Modal extends React.Component<Props, State> {
   constructor() {
     super();
-    this.state={
+    this.state= {
       actualBrightness: null
     }
   }

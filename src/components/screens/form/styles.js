@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import Colors from '../../../constants/colors';
 
 const styles = StyleSheet.create({
+  Container: {
+    backgroundColor: 'blue',
+  },
   SubmitButton: {
     display: 'flex',
     justifyContent: 'center',
