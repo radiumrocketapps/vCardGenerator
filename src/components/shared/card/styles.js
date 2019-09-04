@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
   },
 
   QrCodeContainer: {
+    overflow:'hidden',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
