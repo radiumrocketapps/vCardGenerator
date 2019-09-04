@@ -4,10 +4,12 @@ import {
   View,
   Text,
   SafeAreaView,
-  NativeModules
+  NativeModules,
+  StatusBar,
 } from 'react-native';
 import QRCode from 'react-native-qrcode';
 import styles from './styles';
+import Colors from '../../../constants/colors';
 
 type Props = {
   stringObject: string,
@@ -27,6 +29,7 @@ class Modal extends React.Component {
     const values = navigation.getParam('values', '')
     return (
       <SafeAreaView>
+        <StatusBar backgroundColor={Colors.blue} barStyle="light-content" />
         <View style={styles.MainContainer}>
           <View>
             <Text style={styles.Description}>
