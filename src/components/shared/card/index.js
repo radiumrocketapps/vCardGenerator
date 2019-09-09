@@ -9,10 +9,12 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { NavigationScreenProps } from 'react-navigation';
-import QRCode from 'react-native-qrcode';
+// import QRCode from 'react-native-qrcode';
+import QRCode from 'react-native-qrcode-svg';
 import Colors from '../../../constants/colors';
 import type { QrData } from '../../../redux/modules/vCard/types';
 import styles from './styles';
+import logo from '../../../res/images/vCardGenerator_icon.png'
 import { MODAL } from '../../../navigation/screens';
 import ModalWarning from '../../screens/modalWarning';
 
@@ -73,9 +75,11 @@ END:VCARD`.toString();
             <View style={styles.QrCodeContainer}>
               <QRCode
                 value={stringObject}
+                logo={logo}
+                logoSize={30}
                 size={200}
-                bgColor="black"
-                fgColor="white"
+                color="black"
+                backgroundColor="white"
               />
             </View>
             <View style={styles.Description}>
