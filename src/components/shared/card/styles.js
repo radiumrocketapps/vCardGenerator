@@ -38,12 +38,23 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-  TextDescription: {
+  text: {
     textAlign: 'center',
   },
 
+  textDescription: {
+    textAlign: 'center',
+    color: Colors.darkBlue,
+    fontWeight: 'bold'
+  },
+
+  textName: {
+    textAlign: 'center',
+    textTransform: 'capitalize',
+  },
+
   QrCodeContainer: {
-    overflow:'hidden',
+    overflow: 'hidden',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
@@ -56,6 +67,10 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+
+  textBox: {
+    width: '100%',
   }
 
 });

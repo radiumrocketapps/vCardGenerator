@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
   MainContainer: {
     height,
     width,
+    alignItems: 'center',
   },
 
   QrCodeContainer: {
@@ -14,7 +15,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  Description: {
+  textBox: {
+    width: '90%',
+  },
+
+  text: {
     justifyContent: 'center',
     textAlign: 'center',
     marginBottom: 40,
@@ -22,7 +27,9 @@ const styles = StyleSheet.create({
     color: Colors.blue,
     fontWeight: 'bold',
     fontSize: 20,
+    textTransform: 'capitalize',
   },
+
 });
 
 export default styles;

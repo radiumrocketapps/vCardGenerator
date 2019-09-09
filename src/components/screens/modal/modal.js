@@ -21,10 +21,10 @@ type State = {
   actualBrightness: number | null;
 }
 
-class Modal extends React.Component<Props, State> {
+class Modal extends React.Component<Props, State> {
   constructor() {
     super();
-    this.state= {
+    this.state = {
       actualBrightness: null
     }
   }
@@ -37,8 +37,11 @@ class Modal extends React.Component<Props, State> {
       <SafeAreaView>
         <StatusBar backgroundColor={Colors.blue} barStyle="light-content" />
         <View style={styles.MainContainer}>
-          <View>
-            <Text style={styles.Description}>
+          <View style={styles.textBox}>
+            <Text
+              numberOfLines={1}
+              ellipsizeMode='tail'
+              style={styles.text}>
               {values.name}
             </Text>
           </View>

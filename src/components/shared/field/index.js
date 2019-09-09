@@ -44,6 +44,19 @@ class InputField extends React.Component<Props, StateProps> {
     this.setState({ isFocused: false });
   }
 
+  getLineColor = () => {
+    const { touched, error, warning } = this.props.meta
+    const { isFocused } = this.state;
+    let color = Colors.grey
+    if (touched && (error || warning)) {
+      color = Colors.red
+    }
+    if (isFocused) {
+      color = Colors.blue
+    }
+    return color
+  }
+
   render() {
     const {
       label,
@@ -60,17 +73,20 @@ class InputField extends React.Component<Props, StateProps> {
       input: {
         onChange,
         value,
-      }
+      },
+      ...rest
     } = this.props;
+
     const { isFocused } = this.state;
+    const fieldColor = this.getLineColor()
     return (
       <View style={styles.InputContainer}>
         <Text style={[
           styles.Label,
-          { fontWeight: isFocused ? 'bold' : 'normal' }
+          { color: isFocused ? Colors.blue : Colors.grey }
         ]}
         >
-          { label }
+          {label}
         </Text>
         <TextInput
           ref={refField}
@@ -82,23 +98,26 @@ class InputField extends React.Component<Props, StateProps> {
           onFocus={this.handleFocus}
           style={[
             styles.TextInput,
-            { borderBottomColor: isFocused ? Colors.blue : Colors.grey }
+            { borderBottomColor: fieldColor }
           ]}
           type={type}
           value={value}
           keyboardType={keyboardType}
+          {...rest}
         />
         <Ionicons
-          color={isFocused ? Colors.blue : Colors.grey}
+          color={fieldColor}
           style={styles.InputIcon}
           name={iconName}
           size={20}
         />
-        {
-          touched
-          && (<Text style={styles.ErrorMsg}>{error}</Text>
-          || <Text style={styles.ErrorMsg}>{warning}</Text>)
-        }
+        <View style={styles.errorView}>
+          {
+            touched
+            && (<Text style={styles.errorMsg}>{error}</Text>
+              || <Text style={styles.errorMsg}>{warning}</Text>)
+          }
+        </View>
       </View>
     );
   }
