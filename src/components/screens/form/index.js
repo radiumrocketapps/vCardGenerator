@@ -68,24 +68,62 @@ const validate = (values) => {
   })
 
   values.Email && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.Email) ?
-  errors['Email'] = 'Please enter a valid email address' : undefined;
+    errors['Email'] = 'Please enter a valid email address' : undefined;
 
   values.CompanyEmail && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.CompanyEmail) ?
-  errors['CompanyEmail'] = 'Please enter a valid email address' : undefined;
+    errors['CompanyEmail'] = 'Please enter a valid email address' : undefined;
 
   values.Phone && !/^[0-9]+$/.test(values.Phone) ?
-  errors['Phone'] = 'The field must be a number' : undefined
+    errors['Phone'] = 'The field must be a number' : undefined
 
   values.WorkPhone && !/^[0-9]+$/.test(values.WorkPhone) ?
-  errors['WorkPhone'] = 'The field must be a number' : undefined
+    errors['WorkPhone'] = 'The field must be a number' : undefined
 
   return errors;
 };
+
+// const large = 60
+
+// const getWords = () => {
+//   let word = ''
+//   for (let i = 0; i < large; i++) {
+//     word += 'a'
+//   }
+//   return word
+// }
+
+// const getNumber = () => {
+//   let word = ''
+//   for (let i = 0; i < large; i++) {
+//     word += '1'
+//   }
+//   return word
+// }
+
+// const getEmail = () => {
+//   let word = ''
+//   for (let i = 0; i < large - 8; i++) {
+//     word += '1'
+//   }
+//   return word + '@qwe.com'
+// }
 
 const reduxFormConfig = {
   onSubmit,
   validate,
   form: formName,
+  // initialValues: {
+  //   Description: getWords(),
+  //   Name: getWords(),
+  //   Email: getEmail(),
+  //   Phone: getNumber(),
+  //   WorkPhone: getNumber(),
+  //   Company: getWords(),
+  //   CompanyEmail: getEmail(),
+  //   Title: getWords(),
+  //   Address: getWords(),
+  //   Country: getWords(),
+  // }
 }
 
 export default connect(

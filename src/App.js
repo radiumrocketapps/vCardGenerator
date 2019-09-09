@@ -14,7 +14,7 @@ import {
 } from './helpers/store';
 import SplashScreen from 'react-native-splash-screen';
 
-class App extends React.Component {
+class App extends React.Component<{}> {
   componentDidMount() {
     let fontName = 'Rubik-Light';
     SplashScreen.hide();

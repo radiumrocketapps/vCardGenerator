@@ -23,8 +23,12 @@ const styles = StyleSheet.create({
     top: 20,
     right: 5,
   },
-  ErrorMsg: {
+  errorMsg: {
+    fontSize: 14,
     color: Colors.red,
+  },
+  errorView: {
+    height: 15,
   }
 });
 
