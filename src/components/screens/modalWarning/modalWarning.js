@@ -9,7 +9,6 @@ import {
   Modal
 } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
-import QRCode from 'react-native-qrcode';
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from '../../../constants/colors';
@@ -20,7 +19,7 @@ type Props = NavigationScreenProps & {
   closeModal: () => void,
 }
 
-class ModalWarning extends React.Component<Props, {}> {
+class ModalWarning extends React.Component<Props, {}> {
 
   render() {
     const {
