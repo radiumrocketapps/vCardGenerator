@@ -8,7 +8,8 @@
     "ios": "react-native run-ios",
     "android": "react-native run-android",
     "lint": "eslint *.js **/*.js",
-    "flow": "flow"
+    "flow": "flow",
+    "build-android": "(cd android && ./gradlew assembleRelease)"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",

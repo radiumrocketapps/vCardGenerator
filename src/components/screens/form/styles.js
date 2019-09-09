@@ -1,5 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import Colors from '../../../constants/colors';
+const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   Container: {
@@ -9,9 +10,11 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     marginTop: 20,
-    marginBottom: 50,
-    width: 80,
-    height: 40,
+    marginBottom: 30,
+    borderRadius: 5,
+    width: width * 0.30,
+    minWidth: 85,
+    height: 45,
     padding: 10,
     alignSelf: 'center',
     backgroundColor: Colors.blue,
