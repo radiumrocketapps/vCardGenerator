@@ -9,7 +9,8 @@ import {
 } from 'react-native';
 import { NavigationScreenProps } from 'react-navigation';
 import type { ReduxProps } from './';
-import QRCode from 'react-native-qrcode';
+import logo from '../../../res/images/vCardGenerator_icon.png'
+import QRCode from 'react-native-qrcode-svg';
 import styles from './styles';
 import Colors from '../../../constants/colors';
 
@@ -48,9 +49,11 @@ class Modal extends React.Component<Props, State> {
           <View style={styles.QrCodeContainer}>
             <QRCode
               value={stringObject}
+              logo={logo}
+              logoSize={30}
               size={250}
-              bgColor="black"
-              fgColor="white"
+              color="black"
+              backgroundColor="white"
             />
           </View>
         </View>
